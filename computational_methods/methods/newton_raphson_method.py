@@ -32,6 +32,8 @@ def nrm(
     diff_fx = fx.diff()
     # Printing out the information to the user
 
+    # Print `Given` to the screen
+
     print(f"Given function: f(x) => \n{pretty(fx)}")
     print()
     print(f"Simplified function: f(x) => \n{pretty(simplified_fx)}")
@@ -39,20 +41,11 @@ def nrm(
     print(f"Now: f'(x) => \n{pretty(diff_fx)}")
     print()
 
-    # # Check for root existence
-    # if (
-    #     float(simplified_fx.subs({"x": num_range.start})
-    #     * simplified_fx.subs({"x": num_range.stop})
-    #     )>= 0
-    # ):
-    #     print(
-    #         "WARNING: No sign change detected in the given range. A root might not exist."
-    #     )
-
     #
     # Step 1
     #
     # Checking the root range
+    # by substituting values like 0, 1, 2,3 ... 
     prev_number = None
 
     print("=====================")
@@ -109,4 +102,5 @@ def nrm(
         iteration += 1
 
 
-# nrm("(3*x) - cos(x) - 1", num_range=NumRange(0, 10), decimal_places=6)
+if __name__ == "__main__":
+    nrm("(3*x) - cos(x) - 1", num_range=NumRange(0, 10), decimal_places=6)
